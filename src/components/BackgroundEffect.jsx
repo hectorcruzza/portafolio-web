@@ -54,8 +54,8 @@ export default function BackgroundEffect() {
     }
 
     document.addEventListener("mousemove", (e) => {
-      const mouseX = (e.clientX / window.innerWidth) * 100;
-      const mouseY = (e.clientY / window.innerHeight) * 100;
+      const mouseX = e.clientX;
+      const mouseY = e.clientY + window.scrollY;
 
       const particle = document.createElement("div");
       particle.className = styles.particle;
@@ -63,16 +63,16 @@ export default function BackgroundEffect() {
       const size = Math.random() * 4 + 2;
       particle.style.width = `${size}px`;
       particle.style.height = `${size}px`;
-      particle.style.left = `${mouseX}%`;
-      particle.style.top = `${mouseY}%`;
+      particle.style.left = `${mouseX}px`;
+      particle.style.top = `${mouseY}px`;
       particle.style.opacity = "0.6";
 
       particlesContainer.appendChild(particle);
 
       setTimeout(() => {
         particle.style.transition = "all 2s ease-out";
-        particle.style.left = `${mouseX + (Math.random() * 10 - 5)}%`;
-        particle.style.top = `${mouseY + (Math.random() * 10 - 5)}%`;
+        particle.style.left = `${mouseX + (Math.random() * 100 - 50)}px`;
+        particle.style.top = `${mouseY + (Math.random() * 100 - 50)}px`;
         particle.style.opacity = "0";
 
         setTimeout(() => {

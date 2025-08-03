@@ -8,7 +8,7 @@ export default function App() {
     <div className="relative w-full min-h-screen bg-[#050505] overflow-hidden">
       <BackgroundEffect />
       <Navbar />
-      <main className="relative z-10">
+      <main className="relative z-10 pt-24 pb-4">
         <Routes>
           <Route path="/" element={<Home />} />
         </Routes>

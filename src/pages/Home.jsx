@@ -14,7 +14,7 @@ import TechIcon from "../components/TechIcon";
 
 export default function Home() {
   return (
-    <section className="relative w-full h-screen flex items-center justify-center">
+    <section className="w-full min-h-[calc(100vh-8rem)] flex items-center justify-center">
       <div className="text-center max-w-3xl px-4 space-y-6">
         <motion.div
           initial={{ opacity: 0, y: -20 }}
@@ -31,7 +31,7 @@ export default function Home() {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-400"
         >
-          Héctor Cruz
+          Héctor Iván Cruz Alayola
         </motion.h1>
 
         <motion.p
