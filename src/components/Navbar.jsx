@@ -31,6 +31,18 @@ export default function Navbar() {
               Inicio
             </NavLink>
           </li>
+          <li>
+            <NavLink
+              to="/about"
+              className={({ isActive }) =>
+                `relative text-white font-medium transition-all duration-300 ${
+                  isActive ? "after:w-full font-bold" : "after:w-0"
+                } after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:bg-white after:transition-all after:duration-300 hover:after:w-full`
+              }
+            >
+              Sobre Mí
+            </NavLink>
+          </li>
         </ul>
       </nav>
 
@@ -58,6 +70,17 @@ export default function Navbar() {
             }
           >
             Inicio
+          </NavLink>
+          <NavLink
+            to="/about"
+            onClick={() => setMenuOpen(false)}
+            className={({ isActive }) =>
+              `text-white text-xl transition-all ${
+                isActive ? "font-bold underline underline-offset-4" : ""
+              }`
+            }
+          >
+            Sobre Mí
           </NavLink>
         </div>
       </div>

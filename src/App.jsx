@@ -1,6 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
+import AboutMe from "./pages/AboutMe";
 import BackgroundEffect from "./components/BackgroundEffect";
 
 export default function App() {
@@ -11,6 +12,7 @@ export default function App() {
       <main className="relative z-10 pt-24 pb-4">
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/about" element={<AboutMe />} />
         </Routes>
       </main>
     </div>
