@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import { FaReact, FaHtml5, FaGitAlt, FaGithub, FaPython } from "react-icons/fa";
 import {
   SiVite,
@@ -78,9 +79,11 @@ export default function Home() {
           transition={{ duration: 0.8, delay: 1.2 }}
           className="flex justify-center space-x-4 mt-8"
         >
-          <button className="bg-gradient-to-r from-[#ff3a82] to-[#5233ff] text-white font-semibold py-3 px-6 rounded-full shadow-lg hover:translate-y-[-2px] transition-all uppercase">
-            Ver Proyectos
-          </button>
+          <Link to="/projects">
+            <button className="bg-gradient-to-r from-[#ff3a82] to-[#5233ff] text-white font-semibold py-3 px-6 rounded-full shadow-lg hover:translate-y-[-2px] transition-all uppercase">
+              Ver Proyectos
+            </button>
+          </Link>
           <button className="bg-white/10 text-white font-semibold py-3 px-6 rounded-full border border-white/20 hover:bg-white/20 transition-all uppercase">
             DevLogs
           </button>
