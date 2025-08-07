@@ -15,6 +15,11 @@ export default function DevLogs() {
             "Desarrollo de mi Portafolio Web: Mejoras en Inicio, Sobre Mí y Proyectos [02]",
           url: "https://youtu.be/uLJ0-WNuHcY",
         },
+        {
+          title:
+            "Desarrollo de mi Portafolio Web: Mejoras en Proyectos, DevLogs y Contacto [03]",
+          url: "https://youtu.be/A_qbRCKWVSA",
+        },
       ],
     },
     {

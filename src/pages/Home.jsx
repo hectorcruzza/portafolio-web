@@ -84,9 +84,11 @@ export default function Home() {
               Ver Proyectos
             </button>
           </Link>
-          <button className="bg-white/10 text-white font-semibold py-3 px-6 rounded-full border border-white/20 hover:bg-white/20 transition-all uppercase">
-            DevLogs
-          </button>
+          <Link to="/devlogs">
+            <button className="bg-white/10 text-white font-semibold py-3 px-6 rounded-full border border-white/20 hover:bg-white/20 transition-all uppercase">
+              DevLogs
+            </button>
+          </Link>
         </motion.div>
       </div>
     </section>
