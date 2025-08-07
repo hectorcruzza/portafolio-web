@@ -1,13 +1,84 @@
+import { useState } from "react";
 import ProjectCard from "../components/ProjectCard";
+import ImageGalleryModal from "../components/ImageGalleryModal";
 
 export default function Projects() {
+  const [isGalleryOpen, setIsGalleryOpen] = useState(false);
+  const [selectedImages, setSelectedImages] = useState([]);
+
   const projects = [
     {
       title: "Recursos Humanos App",
-      description: "Aplicación de gestión de personal.",
+      description: "Aplicación web de gestión de personal.",
       technologies: ["React + Vite", "TailwindCSS", "Firebase"],
       demoLink: "https://myhrappv1.netlify.app/",
       repoLink: "https://github.com/hectorcruzza/my-hr-app.git",
+      images: [
+        "/images/RRHH1.png",
+        "/images/RRHH2.png",
+        "/images/RRHH3.png",
+        "/images/RRHH4.png",
+      ],
+      devlogLink: true,
+      inProgress: false,
+    },
+    {
+      title: "Chatbot para Top Mexico Real Estate",
+      description:
+        "Chatbot potenciado por Gemini AI mediante Google AI Studio, que guía al usuario a elegir su propiedad ideal.",
+      technologies: [
+        "React + Vite",
+        "TailwindCSS",
+        "Google AI Studio",
+        "Gemini",
+      ],
+      demoLink: "https://chatbot-topmre.netlify.app/",
+      repoLink: "https://github.com/hectorcruzza/chatbot-topmre.git",
+      images: ["/images/Chatbot1.png", "/images/Chatbot2.png"],
+      devlogLink: true,
+      inProgress: true,
+    },
+    {
+      title: "MarketPal",
+      description:
+        "Aplicación de escritorio tipo POS diseñada para facilitar la gestión de un negocio. Permite llevar un control de ventas, inventario, clientes y empleados, todo desde una interfaz sencilla y fácil de usar.",
+      technologies: ["C#", ".NET", "Firebase"],
+      demoLink: null,
+      repoLink: "https://github.com/MikeGPQ/MarketPal-1.2.git",
+      images: [
+        "/images/MarketPal1.png",
+        "/images/MarketPal2.png",
+        "/images/MarketPal3.png",
+        "/images/MarketPal4.png",
+        "/images/MarketPal5.png",
+        "/images/MarketPal6.png",
+        "/images/MarketPal7.png",
+        "/images/MarketPal8.png",
+        "/images/MarketPal9.png",
+      ],
+      devlogLink: null,
+      inProgress: false,
+    },
+    {
+      title: "PedalRide Rentals",
+      description: "Sistema de reservaciones para alquilar bicicletas.",
+      technologies: ["Python"],
+      demoLink: null,
+      repoLink: "https://github.com/hectorcruzza/PedalRide-Rentals.git",
+      images: [
+        "/images/PedalRideRentals1.png",
+        "/images/PedalRideRentals2.png",
+        "/images/PedalRideRentals3.png",
+        "/images/PedalRideRentals4.png",
+        "/images/PedalRideRentals5.png",
+        "/images/PedalRideRentals6.png",
+        "/images/PedalRideRentals7.png",
+        "/images/PedalRideRentals8.png",
+        "/images/PedalRideRentals9.png",
+        "/images/PedalRideRentals10.png",
+      ],
+      devlogLink: null,
+      inProgress: false,
     },
   ];
 
@@ -33,12 +104,25 @@ export default function Projects() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {projects.map((project, index) => (
-                <ProjectCard key={index} {...project} />
+                <ProjectCard
+                  key={index}
+                  {...project}
+                  onOpenGallery={() => {
+                    setSelectedImages(project.images);
+                    setIsGalleryOpen(true);
+                  }}
+                />
               ))}
             </div>
           </div>
         </div>
       </div>
+
+      <ImageGalleryModal
+        images={selectedImages}
+        isOpen={isGalleryOpen}
+        onClose={() => setIsGalleryOpen(false)}
+      />
     </section>
   );
 }
